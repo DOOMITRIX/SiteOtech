@@ -180,16 +180,48 @@ footer {
 }
 
 /* Responsive */
-@media (max-width: 992px){
-  .section-bg{ padding:56px 0; background-position:center top; }
-  .vente-location-container{ padding:22px; margin:0 12px; }
-  .service-icon{ width:48px; height:48px; font-size:28px; }
+@media (max-width: 1200px) {
+  .section-bg { padding: 70px 0; }
+  .vente-location-container { padding: 28px 24px; }
+  .cadre-blanc { padding: 24px; }
 }
-@media (max-width: 576px){
-  .section-bg{ padding:40px 0; }
-  .titre-principal{ font-size:1.4rem; }
-  .service-card{ padding:18px; }
-  .service-card ul{ margin-left:14px; }
+
+@media (max-width: 992px) {
+  .section-bg { padding: 56px 0; background-position: center top; }
+  .vente-location-container { padding: 22px; margin: 0 12px; }
+  .service-icon { width: 48px; height: 48px; font-size: 28px; }
+  .cadre-blanc { flex-direction: column; text-align: center; }
+  .cadre-blanc .cadre-content { flex-direction: column; }
+  .cadre-blanc .cadre-logo img { max-width: 160px; }
+  .boutons-actions { flex-wrap: wrap; gap: 10px; }
+}
+
+@media (max-width: 768px) {
+  .section-bg { padding: 48px 0; padding-left: 12px; padding-right: 12px; }
+  .titre-principal { font-size: 1.5rem; }
+  .service-card { padding: 16px; }
+  .cadre-blanc { padding: 18px; }
+  .bouton-bleu { padding: 8px 14px; font-size: 0.9rem; }
+}
+
+@media (max-width: 576px) {
+  .section-bg { padding: 40px 0; }
+  .titre-principal { font-size: 1.3rem; }
+  .service-card { padding: 14px; }
+  .service-card ul { margin-left: 14px; margin-bottom: 8px; }
+  .cadre-blanc { padding: 14px; }
+  .cadre-blanc .cadre-logo img { max-width: 140px; }
+  .vente-location-container { padding: 16px; margin: 0 8px; }
+  .boutons-actions { gap: 8px; }
+  .bouton-bleu { padding: 8px 12px; font-size: 0.85rem; }
+}
+
+@media (max-width: 360px) {
+  .titre-principal { font-size: 1.2rem; }
+  .service-card { padding: 12px; }
+  .cadre-blanc { padding: 12px; }
+  .cadre-blanc .cadre-logo img { max-width: 120px; }
+  .section-bg { padding: 30px 0; }
 }
 
 /* Accessibility focus states */

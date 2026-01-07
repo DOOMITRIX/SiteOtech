@@ -399,23 +399,52 @@ body {
     box-shadow:0 8px 30px rgba(10,30,60,0.06); 
 }
 
-/* Mobile adjustments */
-@media (max-width: 860px) {
-  .hero { height: 360px; padding-top: 6%; }
-  .text-overlay { padding: 0 12px; margin-left: 8px; }
-  .text-overlay h1 { font-size: 1.4rem; }
-  .text-overlay .lead { font-size: 0.95rem; }
-  .title { padding: 14px 12px; }
+/* Mobile adjustments - Tablets & larger mobile */
+@media (max-width: 992px) {
+  .hero { height: 400px; padding-top: 6%; }
+  .text-overlay { padding: 0 16px; margin-left: 12px; }
+  .text-overlay h1 { font-size: 1.6rem; }
+  .text-overlay .lead { font-size: 1rem; }
+  .title { padding: 16px 14px; }
   .about-image { max-width: 420px; }
   .features-list { max-width: 520px; }
-  body { padding-top: 110px; }
+  body { padding-top: 100px; }
+  .section.about { padding: 40px 0; }
+  .service-card { padding: 18px; }
 }
 
-@media (max-width: 480px) {
-  .hero { height: 300px; }
+/* Mobile - Standard phones */
+@media (max-width: 768px) {
+  .hero { height: 360px; }
+  .text-overlay { padding: 0 12px; }
+  .text-overlay h1 { font-size: 1.4rem; }
+  .text-overlay .lead { font-size: 0.95rem; }
+  .title { padding: 12px 12px; }
+  .about-image { display: none; }
+  .service-card { padding: 16px; gap: 8px; }
+  .stat h4 { font-size: 1.4rem; }
+}
+
+/* Mobile - Small phones */
+@media (max-width: 576px) {
+  .hero { height: 300px; padding-top: 8%; }
+  .text-overlay { margin-left: 8px; }
   .text-overlay h1 { font-size: 1.2rem; }
   .lead-slogan { font-size: 0.9rem; }
-  .title { padding: 10px 10px; }
+  .title { padding: 10px 10px; font-size: 0.95rem; }
+  .about-content h2 { font-size: 1.2rem; }
+  .features-list { max-width: 100%; margin-left: 0; }
+  .service-card { padding: 14px; }
+  body { padding-top: 90px; }
+}
+
+/* Very small mobile */
+@media (max-width: 360px) {
+  .hero { height: 280px; }
+  .text-overlay h1 { font-size: 1.1rem; }
+  .title { padding: 8px 8px; }
+  .lead-slogan { font-size: 0.85rem; }
+  .about-content h2 { font-size: 1.1rem; }
 }
 
 .map-responsive iframe{ 

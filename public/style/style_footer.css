@@ -1,5 +1,10 @@
-﻿footer{
-  background:#fff;
+﻿:root {
+  --brand: #0b5ea8;
+  --brand-dark: #083b66;
+}
+
+footer{
+  background:#f8f9fa;
   padding:28px 0 48px;
   border-top:1px solid rgba(10,30,60,0.04);
   color:#3a5a6a;
@@ -14,6 +19,11 @@
 .footer h5{
   color:var(--brand);
   margin-bottom:6px;
+  font-weight: 600;
+}
+
+.footer p{
+  color:#3a5a6a;
 }
 
 .footer p.mb-0{ 
@@ -33,11 +43,36 @@
   color:#004c8c; 
 }
 
-@media (max-width:768px){
-  footer .text-md-end { 
-    text-align:left!important; 
-    margin-top:12px; 
-  }
+@media (max-width: 1200px) {
+  .footer { padding: 2.5rem 0; }
+}
+
+@media (max-width: 992px) {
+  .footer { padding: 2rem 0; }
+  footer { padding: 24px 0 40px; }
+}
+
+@media (max-width: 768px) {
+  footer { padding: 20px 0 36px; }
+  footer .text-md-end { text-align: left !important; margin-top: 12px; }
+  .footer { padding: 1.5rem 0; display: flex; flex-direction: column; gap: 12px; }
+  .footer h5 { font-size: 1rem; }
+  .footer p { font-size: 0.9rem; margin-bottom: 6px; }
+}
+
+@media (max-width: 576px) {
+  footer { padding: 16px 0 32px; }
+  .footer { padding: 1rem 0; gap: 10px; }
+  .footer h5 { font-size: 0.95rem; }
+  .footer p { font-size: 0.85rem; }
+  .text-retrouvez a { font-size: 0.85rem; margin: 8px 0; }
+}
+
+@media (max-width: 360px) {
+  footer { padding: 12px 0 28px; }
+  .footer { padding: 0.75rem 0; }
+  .footer h5 { font-size: 0.9rem; }
+  .footer p { font-size: 0.8rem; }
 }
 
 .footer-slogan { 

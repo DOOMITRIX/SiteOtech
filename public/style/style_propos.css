@@ -111,18 +111,44 @@ footer h5{ margin:0 0 6px; color:var(--brand); }
 a:focus, button:focus { outline: 3px solid rgba(11,94,168,0.18); outline-offset:3px; border-radius:6px; }
 
 /* responsive : 2 colonnes ponctuelles si on ajoute des éléments */
-@media (min-width: 980px){
-  .contenue-prestation, .propos-grid{ display:grid; grid-template-columns: 1fr 420px; gap:24px; max-width:var(--maxw); margin:24px auto; padding:0 18px; }
+@media (max-width: 1200px) {
+  .propos-container { padding: 0 20px; }
+  .propos-text { padding: 20px; }
 }
-@media (max-width: 979px){
-  .propos-text, .propos-title, .propos-container{ padding-left:14px; padding-right:14px; }
-  body{ padding-top:76px; }
+
+@media (max-width: 992px) {
+  .propos-container { padding: 0 16px; }
+  .propos-text { padding: 18px; }
+  .propos-title h1 { font-size: clamp(1.5rem, 2vw, 2rem); }
+  body { padding-top: 90px; }
 }
-@media (max-width: 576px){
-  .propos-title h1{ font-size:1.4rem; }
-  .propos-text{ padding:14px; }
-  .propos-text p{ font-size:0.98rem; }
-  footer .footer{ flex-direction:column; align-items:flex-start; gap:12px; }
+
+@media (max-width: 768px) {
+  .propos-container { padding: 0 14px; margin: 20px auto; }
+  .propos-text { padding: 16px; }
+  .propos-title h1 { font-size: 1.5rem; }
+  .propos-text p { font-size: 0.98rem; }
+  .propos-text ul { margin-left: 18px; }
+  body { padding-top: 88px; }
+}
+
+@media (max-width: 576px) {
+  .propos-container { padding: 0 12px; margin: 16px auto; }
+  .propos-title { padding: 14px; margin-bottom: 12px; }
+  .propos-title h1 { font-size: 1.3rem; }
+  .propos-text { padding: 14px; margin-bottom: 20px; }
+  .propos-text p { font-size: 0.95rem; }
+  .propos-text ul { margin-left: 16px; }
+  footer .footer { flex-direction: column; align-items: flex-start; gap: 12px; }
+  body { padding-top: 85px; }
+}
+
+@media (max-width: 360px) {
+  .propos-title h1 { font-size: 1.2rem; }
+  .propos-text { padding: 12px; }
+  .propos-text p { font-size: 0.9rem; }
+  .propos-text ul { margin-left: 14px; }
+  footer .footer { gap: 8px; }
 }
 
 /* petites optimisations typographiques */
