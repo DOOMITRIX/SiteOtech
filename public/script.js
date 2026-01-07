@@ -88,7 +88,11 @@ function setSloganForElement(footerContainer, phrase){
 }
 
 function updateFooterSlogan(phrase){
-    document.querySelectorAll('footer .footer').forEach(f => setSloganForElement(f, phrase));
+    const footers = document.querySelectorAll('footer');
+    footers.forEach(f => {
+        const container = f.querySelector('.container') || f.querySelector('.footer') || f;
+        setSloganForElement(container, phrase);
+    });
 }
 
 let __footerSloganObserverInitialized = false;
@@ -130,7 +134,6 @@ function loadBootstrapBundle(){
 }
 
 function initHeaderBehavior(){
-    // close menus when clicking outside
     document.addEventListener('click', function(e){
       if (!e.target.closest('.navbar')) {
         document.querySelectorAll('.dropdown-menu.show').forEach(m => m.classList.remove('show'));
@@ -138,7 +141,6 @@ function initHeaderBehavior(){
       }
     });
 
-    // submenu toggle for mobile
     document.querySelectorAll('.dropdown-submenu > .dropdown-toggle').forEach(function(toggle){
       toggle.addEventListener('click', function(e){
         const submenu = toggle.nextElementSibling;
@@ -150,19 +152,18 @@ function initHeaderBehavior(){
     });
 }
 
-// on load choose one phrase and rotate it every 5 seconds for both hero and footer
 window.addEventListener('DOMContentLoaded', () => {
-    // load bootstrap & header then init behaviors
     Promise.all([loadBootstrapBundle(), loadHeader()])
       .then(() => initHeaderBehavior())
       .catch(err => console.warn('Bootstrap/header load warning', err));
 
-    loadFooter();
-
     let shared = SITE_PHRASES[Math.floor(Math.random()*SITE_PHRASES.length)];
     setHeroSlogan(shared);
-    updateFooterSlogan(shared);
     initFooterObserver(() => shared);
+
+    loadFooter().then(() => {
+        updateFooterSlogan(shared);
+    });
 
     setInterval(() => {
         const next = pickRandomDifferent(shared);
