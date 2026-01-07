@@ -15,35 +15,43 @@
 
 body { 
     padding-top: var(--header-offset); 
-    margin:0; 
+    margin: 0;
     color:var(--text); 
     background:linear-gradient(180deg,#fff,#fbfdff); 
     -webkit-font-smoothing:antialiased; 
 }
 
-.bloc-arriere-plan3{
-  background: linear-gradient(180deg, rgba(11,94,168,0.04), rgba(11,94,168,0.02));
-  padding: 48px 0 36px;
+.section-bg{
+  background: linear-gradient(0deg, rgba(3,67,114,0.28), rgba(3,67,114,0.28)), url('../image/fond_prestation.jpg') center/cover no-repeat;
+  padding: 80px 0;
+  margin-top: 50px;
   display:flex;
-  justify-content:center;
+  align-items:center;
 }
 
-.cadre-blanc{
-  max-width: calc(var(--maxw) - 2*var(--container-pad));
-  width:100%;
-  background: rgba(255,255,255,0.98);
-  border-radius: var(--radius);
-  padding: 28px 22px;
+.container{
+  margin-top: 50px;
+}
+
+.vente-location-container{
+  max-width:960px;
+  margin:0 auto;
+  background: rgba(255,255,255,0.96);
+  padding:34px 30px;
+  border-radius: 12px;
   box-shadow: var(--shadow);
   text-align:center;
 }
-
 .titre-principal{
-  margin:0;
-  font-size:1.7rem;
+  font-size:1.9rem;
   color:var(--brand);
+  margin:0 0 10px;
   font-weight:700;
-  letter-spacing:0.2px;
+}
+.texte-intro{
+  color:#234;
+  line-height:1.6;
+  margin-bottom:18px;
 }
 
 .contenue-prestation{

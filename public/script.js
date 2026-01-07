@@ -37,7 +37,8 @@ const SITE_PHRASES = [
     "La planète tu la préfères bleue ou bien cuite ?",
     "On a pas trouvé d'eau sur Mars, alors préservons-la sur Terre !",
     "Arrête de niquer ta MER !",
-    "On boit quoi demain ?"
+    "On boit quoi demain ?",
+    "On nettoie l’eau aujourd’hui, on chill demain !"
 ];
 
 function setHeroSlogan(phrase){
