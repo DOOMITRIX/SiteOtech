@@ -1,0 +1,130 @@
+:root{
+  --brand: #0b5ea8;
+  --brand-600: #08497f;
+  --muted: #f6f9fb;
+  --card: #ffffff;
+  --text: #12303f;
+  --muted-text: #4b6672;
+  --radius: 12px;
+  --maxw: 1200px;
+  --shadow: 0 12px 30px rgba(10,30,50,0.06);
+  --header-offset: 84px; /* ajuster si header change */
+  font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* layout et protection sous header fixe */
+html,body{ height:100%; }
+body{
+  margin:0;
+  padding-top:var(--header-offset);
+  background: linear-gradient(180deg,#fff,#fbfdff);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.6;
+  font-size:16px;
+}
+
+/* conteneur principal (gestion du HTML existant) */
+.propos-container{
+  /* si le HTML place du contenu ici, on l'affiche proprement */
+  max-width:var(--maxw);
+  margin: 28px auto;
+  padding: 0 18px;
+  box-sizing:border-box;
+}
+
+/* bloc titre (texte présent dans la page) */
+.propos-title{
+  max-width:var(--maxw);
+  margin: 8px auto 18px;
+  padding: 18px;
+  box-sizing:border-box;
+  display:block;
+}
+.propos-title h1{
+  margin:0 0 8px;
+  font-size:clamp(1.6rem, 2.2vw, 2.2rem);
+  color:var(--brand);
+  letter-spacing:0.2px;
+  font-weight:700;
+}
+.propos-title p{
+  margin:0 0 12px;
+  color:var(--muted-text);
+  font-weight:600;
+}
+
+/* zone de texte longue (conserve retours à la ligne présents dans HTML) */
+.propos-text{
+  max-width:calc(var(--maxw) - 36px);
+  margin: 0 auto 36px;
+  padding: 18px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(250,250,252,0.98));
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  box-sizing:border-box;
+  color:var(--muted-text);
+}
+.propos-text p{
+  margin:0 0 12px;
+  white-space: pre-line; /* respecte les <br> et sauts de ligne */
+  font-size:0.99rem;
+}
+
+/* listes */
+.propos-text ul{
+  margin:12px 0 0 20px;
+  padding:0;
+  color:var(--muted-text);
+  list-style: disc;
+}
+.propos-text li{
+  margin:8px 0;
+  line-height:1.5;
+}
+
+/* petits ajustements visuels */
+.propos-text strong, .propos-text b{ color:var(--text); }
+.propos-text a{ color:var(--brand); text-decoration:underline; }
+.propos-text a:hover{ color:var(--brand-600); }
+
+/* footer area (si présent dans HTML global) */
+footer{
+  margin-top:28px;
+  padding:22px 18px 48px;
+  color:#4a636f;
+  background:transparent;
+}
+footer .footer{
+  max-width:var(--maxw);
+  margin:0 auto;
+  padding:0;
+  display:flex;
+  gap:18px;
+  justify-content:space-between;
+  flex-wrap:wrap;
+}
+footer h5{ margin:0 0 6px; color:var(--brand); }
+
+/* accessibilité */
+a:focus, button:focus { outline: 3px solid rgba(11,94,168,0.18); outline-offset:3px; border-radius:6px; }
+
+/* responsive : 2 colonnes ponctuelles si on ajoute des éléments */
+@media (min-width: 980px){
+  .contenue-prestation, .propos-grid{ display:grid; grid-template-columns: 1fr 420px; gap:24px; max-width:var(--maxw); margin:24px auto; padding:0 18px; }
+}
+@media (max-width: 979px){
+  .propos-text, .propos-title, .propos-container{ padding-left:14px; padding-right:14px; }
+  body{ padding-top:76px; }
+}
+@media (max-width: 576px){
+  .propos-title h1{ font-size:1.4rem; }
+  .propos-text{ padding:14px; }
+  .propos-text p{ font-size:0.98rem; }
+  footer .footer{ flex-direction:column; align-items:flex-start; gap:12px; }
+}
+
+/* petites optimisations typographiques */
+h1, h2, h3, h4, h5{ line-height:1.15; color:var(--text); }
+p{ margin-bottom:0.8rem; }

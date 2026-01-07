@@ -1,0 +1,201 @@
+:root{
+  --brand: #0b5ea8;
+  --brand-dark: #083b66;
+  --muted: #f6f9fb;
+  --card: #ffffff;
+  --text: #12303f;
+  --accent: #2b9ed8;
+  --radius: 12px;
+  --maxw: 1200px;
+  --shadow: 0 12px 30px rgba(10,30,50,0.07);
+}
+
+/* Page container */
+body { font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, Arial; color:var(--text); background:#fff; }
+
+/* HERO / Intro */
+.section-bg{
+  background: linear-gradient(0deg, rgba(3,67,114,0.28), rgba(3,67,114,0.28)), url('../image/mainstream.jpg') center/cover no-repeat;
+  padding: 80px 0;
+  display:flex;
+  align-items:center;
+}
+.vente-location-container{
+  max-width:960px;
+  margin:0 auto;
+  background: rgba(255,255,255,0.96);
+  padding:34px 30px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  text-align:center;
+}
+.titre-principal{
+  font-size:1.9rem;
+  color:var(--brand);
+  margin:0 0 10px;
+  font-weight:700;
+}
+.texte-intro{
+  color:#234;
+  line-height:1.6;
+  margin-bottom:18px;
+}
+
+/* Action buttons */
+.boutons-actions{
+  display:inline-flex;
+  gap:12px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.bouton-bleu{
+  background:var(--brand);
+  color:#fff;
+  padding:10px 18px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:600;
+  box-shadow: 0 6px 18px rgba(11,94,168,0.12);
+  transition: transform .12s ease, background .12s ease;
+}
+.bouton-bleu:hover{ background:var(--brand-dark); transform:translateY(-2px); }
+
+/* Cards / highlights */
+.service-card{
+  background:var(--card);
+  border-radius:12px;
+  padding:24px;
+  box-shadow: 0 8px 24px rgba(10,30,50,0.06);
+  transition: transform .22s ease, box-shadow .22s ease;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+}
+.service-card:hover{ transform:translateY(-8px); box-shadow: 0 24px 48px rgba(10,30,50,0.10); }
+.service-icon{
+  font-size:34px;
+  color:#fff;
+  width:56px;
+  height:56px;
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg,var(--accent),var(--brand));
+  box-shadow: 0 6px 18px rgba(43,158,216,0.14);
+}
+
+/* List inside card */
+.service-card ul{
+  margin:12px 0 0 18px;
+  padding:0;
+  color:#3b5665;
+}
+
+
+
+/* Collaboration block */
+.cadre-blanc{
+  background: #fff;
+  padding:28px;
+  border-radius:10px;
+  box-shadow: 0 10px 30px rgba(10,30,50,0.04);
+  text-align:left;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.cadre-blanc .titre-principal{ color:var(--brand); margin-bottom:8px; }
+.cadre-blanc .cadre-content{display:flex;align-items:center;gap:24px;width:100%}
+.cadre-blanc .cadre-text{flex:1}
+.cadre-blanc .cadre-logo img{max-width:220px;height:auto;border-radius:6px;box-shadow:0 8px 20px rgba(10,30,50,0.06)}
+
+@media (max-width:768px){
+  .cadre-blanc{flex-direction:column;text-align:center}
+  .cadre-blanc .cadre-content{flex-direction:column}
+  .cadre-blanc .cadre-logo img{max-width:160px}
+}
+
+/* footer / zone "retrouvez" */
+.footer {
+    background: #f8f9fa;
+    padding: 3rem 0;
+    margin-top: 0;
+}
+
+.text-retrouvez a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+    transition: color 0.3s ease;
+}
+
+.text-retrouvez a:hover {
+    color: #004c8c;
+}
+
+/* autre définition footer (plus bas dans le fichier) */
+footer {
+    background: #fff;
+    padding: 28px 0 48px;
+    border-top: 1px solid rgba(10,30,60,0.04);
+    color: #3a5a6a;
+}
+
+.footer h5 {
+    color: var(--brand);
+    margin-bottom: 6px;
+}
+
+.footer {
+    background: #f8f9fa;
+    padding: 3rem 0;
+    margin-top: 0;
+}
+
+.text-retrouvez a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+    transition: color 0.3s ease;
+}
+
+.text-retrouvez a:hover {
+    color: #004c8c;
+}
+
+/* autre définition footer (plus bas dans le fichier) */
+footer {
+    background: #fff;
+    padding: 28px 0 48px;
+    border-top: 1px solid rgba(10,30,60,0.04);
+    color: #3a5a6a;
+}
+
+.footer h5 {
+    color: var(--brand);
+    margin-bottom: 6px;
+}
+
+/* Responsive */
+@media (max-width: 992px){
+  .section-bg{ padding:56px 0; background-position:center top; }
+  .vente-location-container{ padding:22px; margin:0 12px; }
+  .service-icon{ width:48px; height:48px; font-size:28px; }
+}
+@media (max-width: 576px){
+  .section-bg{ padding:40px 0; }
+  .titre-principal{ font-size:1.4rem; }
+  .service-card{ padding:18px; }
+  .service-card ul{ margin-left:14px; }
+}
+
+/* Accessibility focus states */
+a:focus, button:focus { outline: 3px solid rgba(11,94,168,0.18); outline-offset:3px; }
+
+/* Small print */
+p, li { font-size:0.98rem; }
+
+/* End of style_VetL.css */

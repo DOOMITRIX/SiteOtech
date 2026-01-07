@@ -1,0 +1,47 @@
+﻿footer{
+  background:#fff;
+  padding:28px 0 48px;
+  border-top:1px solid rgba(10,30,60,0.04);
+  color:#3a5a6a;
+}
+
+.footer{
+  background: #f8f9fa;
+  padding: 3rem 0;
+  margin-top: 0;
+}
+
+.footer h5{
+  color:var(--brand);
+  margin-bottom:6px;
+}
+
+.footer p.mb-0{ 
+  margin-bottom:0; 
+}
+
+.text-retrouvez a{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:10px 0;
+  transition:color .3s;
+  color:inherit;
+}
+
+.text-retrouvez a:hover { 
+  color:#004c8c; 
+}
+
+@media (max-width:768px){
+  footer .text-md-end { 
+    text-align:left!important; 
+    margin-top:12px; 
+  }
+}
+
+.footer-slogan { 
+  margin:0.25rem 0 0; 
+  color:#345; 
+  font-style:italic; 
+}
