@@ -13,6 +13,16 @@
   status = 200
 
 [[redirects]]
+  from = "/recrutons"
+  to = "/.netlify/functions/server"
+  status = 200
+
+[[redirects]]
+  from = "/postuler"
+  to = "/.netlify/functions/server"
+  status = 200
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
