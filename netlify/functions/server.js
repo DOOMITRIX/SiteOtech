@@ -11,10 +11,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, '../../views'));
+app.set('views', path.resolve(__dirname, '../../views'));
 
 router.get('/contact', (req, res) => {
-    res.render('contact');
+    try {
+        res.render('contact');
+    } catch (error) {
+        console.error('Error rendering contact:', error);
+        res.status(500).send('Error loading contact page');
+    }
 });
 
 router.get('/recrutons', (req, res) => {
@@ -48,6 +53,6 @@ router.post('/send', async (req, res) => {
     }
 });
 
-app.use('/.netlify/functions/server', router);
+app.use('/', router);
 
 module.exports.handler = serverless(app);
