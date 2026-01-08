@@ -21,18 +21,10 @@ app.get('/contact', (req, res) => {
         res.render('contact');
     } catch (error) {
         console.error('Error rendering contact:', error);
-        res.status(500).send('Error loading contact page');
+        res.status(500).send('Error loading contact page2');
     }
 });
 
-app.get('/recrutons', (req, res) => {
-    try {
-        res.render('recrutons');
-    } catch (error) {
-        console.error('Error rendering recrutons:', error);
-        res.status(500).send('Error loading recrutons page');
-    }
-});
 
 app.post('/send', async (req, res) => {
     const { nom, email, sujet, message } = req.body;

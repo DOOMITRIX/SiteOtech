@@ -3,17 +3,7 @@
   publish = "public"
 
 [[redirects]]
-  from = "/contact"
-  to = "/.netlify/functions/server"
-  status = 200
-
-[[redirects]]
   from = "/send"
-  to = "/.netlify/functions/server"
-  status = 200
-
-[[redirects]]
-  from = "/recrutons"
   to = "/.netlify/functions/server"
   status = 200
 
